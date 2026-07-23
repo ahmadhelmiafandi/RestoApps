@@ -1,0 +1,110 @@
+{
+  "menu": [
+    { "id": 1, "name": "Nasi Goreng Spesial", "category": "Makanan Utama", "price": 32000, "desc": "Nasi goreng telur, ayam suwir, kerupuk", "emoji": "🍛", "available": true, "popular": true },
+    { "id": 2, "name": "Ayam Geprek Sambal Korek", "category": "Makanan Utama", "price": 28000, "desc": "Ayam crispy, sambal korek pedas", "emoji": "🍗", "available": true, "popular": true },
+    { "id": 3, "name": "Sate Ayam Madura", "category": "Makanan Utama", "price": 30000, "desc": "10 tusuk, bumbu kacang, lontong", "emoji": "🍢", "available": true, "popular": false },
+    { "id": 4, "name": "Mie Goreng Jawa", "category": "Makanan Utama", "price": 26000, "desc": "Mie goreng bumbu jawa, telur ceplok", "emoji": "🍜", "available": true, "popular": false },
+    { "id": 5, "name": "Tahu Tempe Mendoan", "category": "Camilan", "price": 15000, "desc": "6 potong, sambal kecap", "emoji": "🧈", "available": true, "popular": false },
+    { "id": 6, "name": "Pisang Goreng Keju", "category": "Camilan", "price": 18000, "desc": "Pisang goreng crispy, keju, cokelat", "emoji": "🍌", "available": true, "popular": true },
+    { "id": 7, "name": "Kentang Goreng", "category": "Camilan", "price": 16000, "desc": "Kentang goreng saus sambal mayo", "emoji": "🍟", "available": true, "popular": false },
+    { "id": 8, "name": "Es Teh Manis", "category": "Minuman", "price": 8000, "desc": "Teh manis dingin segar", "emoji": "🧊", "available": true, "popular": true },
+    { "id": 9, "name": "Es Jeruk Peras", "category": "Minuman", "price": 10000, "desc": "Jeruk peras asli, tanpa pengawet", "emoji": "🍊", "available": true, "popular": false },
+    { "id": 10, "name": "Kopi Susu Gula Aren", "category": "Minuman", "price": 18000, "desc": "Kopi susu gula aren, es batu", "emoji": "☕", "available": true, "popular": true },
+    { "id": 11, "name": "Es Cendol", "category": "Dessert", "price": 14000, "desc": "Cendol, santan, gula merah", "emoji": "🍧", "available": true, "popular": false },
+    { "id": 12, "name": "Puding Cokelat", "category": "Dessert", "price": 12000, "desc": "Puding cokelat lembut, vla vanila", "emoji": "🍮", "available": true, "popular": false }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "code": "A01",
+      "table": 3,
+      "items": [
+        { "id": 1, "name": "Nasi Goreng Spesial", "category": "Makanan Utama", "price": 32000, "desc": "Nasi goreng telur, ayam suwir, kerupuk", "emoji": "🍛", "available": true, "popular": true, "qty": 2 },
+        { "id": 8, "name": "Es Teh Manis", "category": "Minuman", "price": 8000, "desc": "Teh manis dingin segar", "emoji": "🧊", "available": true, "popular": true, "qty": 2 }
+      ],
+      "status": "selesai",
+      "total": 80000,
+      "createdAt": "2026-07-19T11:05:00.000Z",
+      "date": "2026-07-19"
+    },
+    {
+      "id": 2,
+      "code": "A02",
+      "table": 5,
+      "items": [
+        { "id": 2, "name": "Ayam Geprek Sambal Korek", "category": "Makanan Utama", "price": 28000, "desc": "Ayam crispy, sambal korek pedas", "emoji": "🍗", "available": true, "popular": true, "qty": 1 },
+        { "id": 10, "name": "Kopi Susu Gula Aren", "category": "Minuman", "price": 18000, "desc": "Kopi susu gula aren, es batu", "emoji": "☕", "available": true, "popular": true, "qty": 1 }
+      ],
+      "status": "selesai",
+      "total": 46000,
+      "createdAt": "2026-07-19T11:20:00.000Z",
+      "date": "2026-07-19"
+    },
+    {
+      "id": 3,
+      "code": "A03",
+      "table": 2,
+      "items": [
+        { "id": 4, "name": "Mie Goreng Jawa", "category": "Makanan Utama", "price": 26000, "desc": "Mie goreng bumbu jawa, telur ceplok", "emoji": "🍜", "available": true, "popular": false, "qty": 1 },
+        { "id": 6, "name": "Pisang Goreng Keju", "category": "Camilan", "price": 18000, "desc": "Pisang goreng crispy, keju, cokelat", "emoji": "🍌", "available": true, "popular": true, "qty": 1 }
+      ],
+      "status": "diproses",
+      "total": 44000,
+      "createdAt": "2026-07-19T12:02:00.000Z",
+      "date": "2026-07-19"
+    },
+    {
+      "id": 4,
+      "code": "A04",
+      "table": 7,
+      "items": [
+        { "id": 3, "name": "Sate Ayam Madura", "category": "Makanan Utama", "price": 30000, "desc": "10 tusuk, bumbu kacang, lontong", "emoji": "🍢", "available": true, "popular": false, "qty": 2 },
+        { "id": 9, "name": "Es Jeruk Peras", "category": "Minuman", "price": 10000, "desc": "Jeruk peras asli, tanpa pengawet", "emoji": "🍊", "available": true, "popular": false, "qty": 3 }
+      ],
+      "status": "selesai",
+      "total": 90000,
+      "createdAt": "2026-07-19T12:10:00.000Z",
+      "date": "2026-07-19"
+    },
+    {
+      "id": 5,
+      "code": "A05",
+      "table": 1,
+      "items": [
+        { "id": 7, "name": "Kentang Goreng", "category": "Camilan", "price": 16000, "desc": "Kentang goreng saus sambal mayo", "emoji": "🍟", "available": true, "popular": false, "qty": 1 },
+        { "id": 11, "name": "Es Cendol", "category": "Dessert", "price": 14000, "desc": "Cendol, santan, gula merah", "emoji": "🍧", "available": true, "popular": false, "qty": 1 }
+      ],
+      "status": "masuk",
+      "total": 30000,
+      "createdAt": "2026-07-19T12:40:00.000Z",
+      "date": "2026-07-19"
+    },
+    {
+      "id": 6,
+      "code": "A06",
+      "table": 9,
+      "items": [
+        { "id": 1, "name": "Nasi Goreng Spesial", "category": "Makanan Utama", "price": 32000, "desc": "Nasi goreng telur, ayam suwir, kerupuk", "emoji": "🍛", "available": true, "popular": true, "qty": 1 },
+        { "id": 12, "name": "Puding Cokelat", "category": "Dessert", "price": 12000, "desc": "Puding cokelat lembut, vla vanila", "emoji": "🍮", "available": true, "popular": false, "qty": 2 }
+      ],
+      "status": "selesai",
+      "total": 56000,
+      "createdAt": "2026-07-19T13:00:00.000Z",
+      "date": "2026-07-19"
+    }
+  ],
+  "tables": [
+    { "id": 1, "name": "Meja 01", "status": "kosong" },
+    { "id": 2, "name": "Meja 02", "status": "kosong" },
+    { "id": 3, "name": "Meja 03", "status": "kosong" },
+    { "id": 4, "name": "Meja 04", "status": "kosong" },
+    { "id": 5, "name": "Meja 05", "status": "kosong" },
+    { "id": 6, "name": "Meja 06", "status": "kosong" },
+    { "id": 7, "name": "Meja 07", "status": "kosong" },
+    { "id": 8, "name": "Meja 08", "status": "kosong" },
+    { "id": 9, "name": "Meja 09", "status": "kosong" },
+    { "id": 10, "name": "Meja 10", "status": "kosong" },
+    { "id": 11, "name": "Meja 11", "status": "kosong" },
+    { "id": 12, "name": "Meja 12", "status": "kosong" }
+  ]
+}
