@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useMenu } from '@/hooks/useMenu';
 import { useOrders } from '@/hooks/useOrders';
@@ -17,7 +17,9 @@ import ConfirmScreen from '@/components/customer/ConfirmScreen';
 import StatusScreen from '@/components/customer/StatusScreen';
 import GlassCard from '@/components/ui/GlassCard';
 
-export default function CustomerPage() {
+export const dynamic = 'force-dynamic';
+
+function CustomerPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { menu, loading: menuLoading, error: menuError } = useMenu();
@@ -264,3 +266,19 @@ export default function CustomerPage() {
     </div>
   );
 }
+
+export default function CustomerPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center relative">
+          <AmbientBackground />
+          <Loader2 size={36} className="animate-spin text-amber-400" />
+        </div>
+      }
+    >
+      <CustomerPageContent />
+    </Suspense>
+  );
+}
+
