@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Search, Star, Minus, Plus, Flame, ShoppingCart } from 'lucide-react';
+import { Search, Star, Minus, Plus, ShoppingCart } from 'lucide-react';
+
 import { COLOR, rupiah } from '@/lib/constants';
 import { MenuItem } from '@/types';
 import GlassCard from '../ui/GlassCard';
@@ -51,9 +52,6 @@ export default function MenuScreen({
           <h2 className="font-display text-2xl font-semibold" style={{ color: COLOR.turmeric }}>
             Meja {table}
           </h2>
-        </div>
-        <div className="w-10 h-10 rounded-xl flex items-center justify-center glass-card border border-white/10">
-          <Flame size={18} style={{ color: COLOR.chili }} className="animate-pulse" />
         </div>
       </div>
 
