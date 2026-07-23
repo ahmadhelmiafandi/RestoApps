@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabaseClient';
 import { Order, OrderItem } from '@/types';
 
+export const dynamic = 'force-dynamic';
+
+
 // Helper: Memetakan baris database Supabase ke interface Order frontend
 function mapOrderRow(row: any): Order {
   return {

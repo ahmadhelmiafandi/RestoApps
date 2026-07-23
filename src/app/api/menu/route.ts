@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabaseClient';
 import { MenuItem } from '@/types';
 
+export const dynamic = 'force-dynamic';
+
+
 // GET: Mengambil semua menu dari Supabase
 export async function GET() {
   try {
