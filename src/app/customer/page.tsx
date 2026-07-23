@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useMenu } from '@/hooks/useMenu';
 import { useOrders } from '@/hooks/useOrders';
 import { useTables } from '@/hooks/useTables';
@@ -19,6 +19,7 @@ import GlassCard from '@/components/ui/GlassCard';
 
 export default function CustomerPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { menu, loading: menuLoading, error: menuError } = useMenu();
   const { orders, placeOrder, refreshOrders } = useOrders();
   const { updateTable } = useTables();
@@ -30,20 +31,32 @@ export default function CustomerPage() {
   const [lastOrderId, setLastOrderId] = useState<number | null>(null);
   const [checkingSession, setCheckingSession] = useState<boolean>(true);
 
-  // Load session from localStorage on mount
+  // Load session from localStorage OR from URL query parameter ?table=X (from QR scan)
   useEffect(() => {
-    const savedTable = localStorage.getItem('resto_table');
-    const savedOrderId = localStorage.getItem('resto_last_order_id');
+    const tableFromUrl = searchParams.get('table');
 
-    if (savedTable) {
-      setTable(Number(savedTable));
+    if (tableFromUrl && !isNaN(Number(tableFromUrl))) {
+      // QR Code scan: auto set table from URL parameter
+      const tableNum = Number(tableFromUrl);
+      setTable(tableNum);
+      localStorage.setItem('resto_table', String(tableNum));
       setCustView('menu');
-    }
-    if (savedOrderId) {
-      setLastOrderId(Number(savedOrderId));
+      updateTable(tableNum, { status: 'terisi' });
+    } else {
+      // Fallback: check localStorage session
+      const savedTable = localStorage.getItem('resto_table');
+      const savedOrderId = localStorage.getItem('resto_last_order_id');
+
+      if (savedTable) {
+        setTable(Number(savedTable));
+        setCustView('menu');
+      }
+      if (savedOrderId) {
+        setLastOrderId(Number(savedOrderId));
+      }
     }
     setCheckingSession(false);
-  }, []);
+  }, [searchParams, updateTable]);
 
   // Poll orders status periodically if we are tracking an active order
   useEffect(() => {
